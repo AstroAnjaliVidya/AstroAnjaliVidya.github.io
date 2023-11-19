@@ -1,0 +1,705 @@
+<!DOCTYPE html5>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Astro Anjali Vidya</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        body {
+            background-color: #fff !important;
+        }
+        
+        .container {
+            width: 100%;
+            height: 100vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7));
+            background-position: center;
+            background-repeat: cover;
+            padding-left: 0%;
+            padding-right: 0%;
+            box-sizing: border-box;
+        }
+        
+        .navbar {
+            height: 10%;
+            display: flex;
+            align-items: center;
+            margin-top: 13px;
+        }
+        
+        header {
+            flex-wrap: wrap;
+            height: 100px;
+        }
+        
+        nav {
+            flex: 1;
+            text-align: right;
+            height: 40px;
+            background-color: black;
+        }
+        
+        nav ul li {
+            list-style: none;
+            display: inline-block;
+            margin-left: 40px;
+            margin-right: 20px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            font-size: 15px;
+        }
+        
+        .carousel_slide {
+            flex-wrap: wrap;
+            width: 77%;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        .carousel-inner {
+            text-align: center;
+            width: 77%;
+            max-height: 550px;
+        }
+        
+        .about {
+            flex-wrap: wrap;
+            width: 80%;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        
+        .about-me {
+            color: #333;
+            text-align: center;
+            text-transform: uppercase;
+            font-family: 'Noto Sans', sans-serif;
+            position: relative;
+            margin: 30px 0 60px;
+        }
+        
+        .about-me::after {
+            content: "";
+            width: 140px;
+            position: absolute;
+            margin: 0 auto;
+            height: 3px;
+            background: #333;
+            left: 0;
+            right: 0;
+            bottom: -10px;
+            opacity: .8;
+        }
+        
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            background-color: black;
+        }
+        
+        .about-image {
+            flex: 1;
+            max-width: 100%;
+            margin-right: 20px;
+            overflow: hidden;
+            border-radius: 5px;
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+        }
+        
+        .about-content {
+            flex: 1;
+            margin-left: 20px;
+            margin-right: 20px;
+            color: rgb(255, 255, 255);
+        }
+        
+        .about-content p {
+            font-size: 16px;
+        }
+        
+        .services {
+            color: #333;
+            text-align: center;
+            text-transform: uppercase;
+            font-family: 'Noto Sans', sans-serif;
+            position: relative;
+            margin: 30px 0 60px;
+        }
+        
+        .services::after {
+            content: "";
+            width: 140px;
+            position: absolute;
+            margin: 0 auto;
+            height: 3px;
+            background: #333;
+            left: 0;
+            right: 0;
+            bottom: -10px;
+            opacity: .8;
+        }
+        
+        .main {
+            margin: 7%;
+            gap: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .card {
+            width: 30%;
+            box-shadow: 2px 2px 20px black;
+            border-radius: 5px;
+            margin: 5%;
+            flex: 1;
+            position: relative;
+        }
+        
+        .image img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-size: cover;
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
+        }
+        
+        .title {
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .des {
+            padding: 3px;
+            text-align: center;
+            padding-top: 10px;
+            margin-left: 5px;
+            margin-right: 5px;
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+        
+        text button {
+            margin-top: 40px;
+            margin-bottom: 10px;
+            background-color: white;
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 10px;
+        }
+        
+        button:hover {
+            background-color: black;
+            color: white;
+            transition: .5s;
+            cursor: pointer;
+        }
+        
+        .container {
+            flex-wrap: wrap;
+            max-height: 520px;
+        }
+        
+        h2 {
+            color: #333;
+            text-align: center;
+            text-transform: uppercase;
+            font-family: 'Noto Sans', sans-serif;
+            font-weight: bold;
+            position: relative;
+            margin: 30px 0 60px;
+        }
+        
+        h2::after {
+            content: "";
+            width: 140px;
+            position: absolute;
+            margin: 0 auto;
+            height: 3px;
+            background: #333;
+            left: 0;
+            right: 0;
+            bottom: -10px;
+            opacity: .8;
+        }
+        
+        .col-center {
+            margin: 0 auto;
+            float: none !important;
+        }
+        
+        .carousel {
+            margin: 50px auto;
+            padding: 0 70px;
+        }
+        
+        .carousel-item {
+            color: #999;
+            font-size: 14px;
+            text-align: center;
+            overflow: hidden;
+            min-height: 290px;
+        }
+        
+        .carousel .item .img-box {
+            width: 135px;
+            height: 135px;
+            margin: 0 auto;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 50%;
+        }
+        
+        .carousel .img-box img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            border-radius: 50%;
+        }
+        
+        .carousel .testimonial {
+            padding: 30px 0 10px;
+        }
+        
+        .carousel .overview {
+            font-style: italic;
+        }
+        
+        .carousel .overview b {
+            text-transform: uppercase;
+            color: #333;
+        }
+        
+        .carousel .carousel-control {
+            width: 40px;
+            height: 40px;
+            margin-top: -20px;
+            top: 50%;
+            background: none;
+        }
+        
+        .carousel-control i {
+            font-size: 68px;
+            line-height: 42px;
+            position: absolute;
+            display: inline-block;
+            color: rgba(0, 0, 0, 0.8);
+            text-shadow: 0 3px 3px #e6e6e6, 0 0 0 #000;
+        }
+        
+        .carousel .carousel-indicators {
+            bottom: -40px;
+        }
+        
+        .carousel-indicators li,
+        .carousel-indicators li.active {
+            width: 10px;
+            height: 10px;
+            margin: 1px 3px;
+            border-radius: 50%;
+        }
+        
+        .carousel-indicators li {
+            background: #999;
+            border-color: transparent;
+            box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.2);
+        }
+        
+        .carousel-indicators li.active {
+            background: #555;
+            box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.2);
+        }
+        
+        .faqs-container {
+            flex-wrap: wrap;
+            max-width: 77%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+        }
+        
+        .faq-item {
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        
+        h3 {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #0066cc;
+        }
+        
+        p {
+            font-size: 16px;
+            color: #666;
+        }
+        
+        footer {
+            flex-wrap: wrap;
+            background-color: rgb(0, 0, 0);
+            color: #fff;
+            padding: 20px 0;
+        }
+        
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .footer-logo img {
+            max-width: 100px;
+            height: auto;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            display: flex;
+        }
+        
+        .footer-links li {
+            margin-right: 20px;
+        }
+        
+        .footer-links a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+        
+        .footer-social a {
+            margin-right: 10px;
+        }
+        
+        .footer-social img {
+            max-width: 40px;
+            height: auto;
+        }
+        
+        .copyright {
+            margin-top: 10px;
+            text-align: center;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            .card {
+                flex: 1 100%;
+                max-width: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            /* Adjustments for smaller screens */
+            header {
+                height: auto !important;
+            }
+            nav {
+                text-align: center !important;
+                height: auto !important;
+            }
+            nav ul {
+                display: block !important;
+                margin-top: 10px !important;
+            }
+            nav ul li {
+                display: block !important;
+                margin: 10px !important;
+                margin-bottom: 10px !important;
+            }
+            .carousel_slide {
+                width: 100% !important;
+                margin-top: 10px !important;
+                margin-bottom: 10px !important;
+            }
+            .about {
+                margin-top: 10px !important;
+                width: 100% !important;
+            }
+            .about-image {
+                margin-right: 0 !important;
+                margin-bottom: 20px !important;
+            }
+            .about-content {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+            .about-content p {
+                font-size: 16px !important;
+            }
+            .main {
+                margin: 5% !important;
+            }
+            .card {
+                width: 100% !important;
+            }
+            .footer-logo {
+                max-width: 10px !important;
+            }
+        }
+    </style>
+    <link href="index.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel=" stylesheet ">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css " rel="stylesheet " integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN " crossorigin="anonymous ">
+</head>
+
+<body>
+    <!--Header-->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#carouselEx">Home</a></li>
+                <li><a href="#aboutEx">About Me</a></li>
+                <li><a href="#servicesEx">Services</a></li>
+                <li><a href="#testimonialsEx">Testimonials</a></li>
+                <li><a href="#faqsEx">FAQs</a></li>
+                <li><a href="#footerEx">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--Carousel-->
+    <section id="carouselEx" class="carousel_slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="2000">
+                <img src="https://drive.google.com/uc?id=1CVALEVY9inTxHHG1_hBSID-RIHf9ZFfB" class="d-block w-100" alt="xyz">
+                <p></p>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="https://drive.google.com/uc?id=1JMLFrZ9eUqEwkTwtFb1KOAVOcRWR2KEk" class="d-block w-100" alt="xyz">
+                <p></p>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="https://drive.google.com/uc?id=1nJvTAf-d71KeYLgQDry16eRWIyjMTMS3" class="d-block w-100" alt="xyz">
+                <p></p>
+            </div>
+        </div>
+    </section>
+
+    <!--About Me-->
+    <section id="aboutEx" class="about">
+        <h2 class="about-me">About Me</h2>
+        <div class="content">
+            <div class="about-image">
+                <img src="https://drive.google.com/uc?id=15U5VwpvYhEUYn_qkZ5C4DujMw2zmVat_">
+            </div>
+            <div class="about-content">
+                <p>I am Astro Anjali Vidya, your Astrologer, Numerologist and Life-style Coach. Through my practice, I have been able Coach and Guide people to strike the fine balance between materialism, spirituality and daily living. I decode the stars
+                    and numbers to guide you on a journey of self-discovery. Let's align your life with purpose and fulfillment.</p>
+            </div>
+        </div>
+    </section>
+
+    <!--Cards-->
+    <h2 id="servicesEx" class="services">Services</h2>
+    <section class="main">
+        <div class="card">
+            <div class="image">
+                <img src="https://st3.depositphotos.com/1025323/18367/i/450/depositphotos_183678196-stock-photo-advance-of-symbolic-meaning.jpg">
+            </div>
+            <div class="title">
+                <h5>
+                    Golden Numerology Report</h5>
+            </div>
+            <div class="des">
+                <p>Introducing a personalized Numerology Report crafted just for you. It's a roadmap to success, self-discovery and happy life. It will include your Mulank, Bhagyank, Success Number, Connection Number, Personality Number, Love Life, Career
+                    + "1 year future prediction report" month wise.</p>
+                <button>
+                    <a href="https://forms.gle/EgVWxWfBbpwxfWjv7" target="_blank">Book Here</a>
+                </button>
+            </div>
+        </div>
+        <div class="card">
+
+            <div class="image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTe8GGIy1-83ipG_7M9SsaK0MIcEHz0bu1lxQDkuK7OORgP-U1U2WK9qaLjS2JjBcFEdNw&usqp=CAU">
+            </div>
+            <div class="title">
+                <h5>
+                    Live Consultation</h5>
+            </div>
+            <div class="des">
+                <p>Experience live guidance from a seasoned Astrologer, Numerologist, and Lifestyle Coach- Astro Anjali Vidya. Join me for personalized consultations where we explore the cosmic influences, unlock the power of numbers, and design a lifestyle
+                    that resonates with your true self and embark on a transformative journey.</p>
+                <button>
+                    <a href="https://forms.gle/EgVWxWfBbpwxfWjv7" target="_blank">Book Here</a>
+                </button>
+            </div>
+        </div>
+        <div class="card">
+
+            <div class="image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRc_H_y0P0_R1T0coc_bZKdP026aI1vXnQnp07niD5ssBAT3eONP0szobztnweQjIh9BYs&usqp=CAU">
+            </div>
+            <div class="title">
+                <h5>
+                    Relationship Management</h5>
+            </div>
+            <div class="des">
+                <p>As human beings, we all share connections and relationships. Navigating these relationships can be complex. Astrology offers solutions to the mysteries of love, relationships, and love marriages. It provides guidance to reclaim lost love
+                    and strengthen relationships, making them ten times better.</p>
+                <button>
+                    <a href="https://forms.gle/EgVWxWfBbpwxfWjv7" target="_blank">Book Here</a>
+                </button>
+            </div>
+        </div>
+    </section>
+    <section class="main">
+        <div class="card">
+            <div class="image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjhjtRZJ5SnbsQsZII1jJMMDDQb3YIxrdXn4WtUaZu81XXjpwkF06WPPXC_IDvhPSZC0c&usqp=CAU">
+            </div>
+            <div class="title">
+                <h5>
+                    Business Name</h5>
+            </div>
+            <div class="des">
+                <p>Are you starting a new business and confused about it's name? It's a big decision. Right? Or are you suffering loss in your business? Your business name is the most important thing for success. Through personalized consultations, I understand
+                    your business and provide you the "Most Auspicious Business Name. "</p>
+                <button>
+                    <a href="https://forms.gle/EgVWxWfBbpwxfWjv7" target="_blank">Book Here</a>
+                </button>
+            </div>
+        </div>
+        <div class="card">
+
+            <div class="image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8pN14HgGVMTxyMbBozIlTeFk8pe3IIu0JHRW9sTBCEjyrnK4op-axrciKXIde9IGs5rQ&usqp=CAU">
+            </div>
+            <div class="title">
+                <h5>
+                    Lucky Vehicle Number</h5>
+            </div>
+            <div class="des">
+                <p>You spend a lot on your favourite Car. Right? But is the vehicle lucky for you? Let the vibrations of the universe guide you on the road to success, safety, and prosperity. Elevate your travel experience "find your Fortunate Vehicle Number
+                    " and drive into a future filled with positive cosmic energies.</p>
+                <button>
+                    <a href="https://forms.gle/EgVWxWfBbpwxfWjv7" target="_blank">Book Here</a>
+                </button>
+            </div>
+        </div>
+        <div class="card">
+
+            <div class="image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZqYameqHquE-tMkdoU1otMLzK8H6mYPcyq2rZ3K9aAfQ72ltsLKbN_mQRPfuhGnUNRkE&usqp=CAU">
+            </div>
+            <div class="title">
+                <h5>
+                    LuckyHouse Number</h5>
+            </div>
+            <div class="des">
+                <p>Getting your dream house? Or Are you facing troubles in your in your new home? As your Numerologist, I provide personalized consultations to reveal your Lucky House Number. Let the cosmic energies guide you to a space that aligns with
+                    your goals, fostering positivity and abundance. Consult us for luck in every address.</p>
+                <button>
+                    <a href="https://forms.gle/EgVWxWfBbpwxfWjv7" target="_blank">Book Here</a>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!--Testimonials-->
+    <section id="testimonialsEx" class="container">
+        <div class="row">
+            <div class="col-md-8 col-center m-auto">
+                <h2>Testimonials</h2>
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Carousel -->
+                    <div class="carousel-inner">
+                        <div class="item carousel-item active">
+                            <div class="img-box">
+                                <img src="https://drive.google.com/uc?id=1vnVo8lS25FOV1Su0Ly3NUhnh0GlbHp_f" alt="xyz"></div>
+                            <p class="testimonial">Exceptional Service: I couldn't be happier with the service I received from Astro Ajali Vidya. The attention to detail, professionalism, and timely delivery exceeded my expectations. Highly recommended!</p>
+                            <p class="overview"><b>Aman</b>, Assistant manager</p>
+                        </div>
+                        <div class="item carousel-item">
+                            <div class="img-box">
+                                <img src="https://drive.google.com/uc?id=1WcpedCmlE6q-edLAZwiLRND5uVmKZCKI" alt="xyz"></div>
+                            <p class="testimonial">Results-Driven: Your Company doesn't just promise results; they deliver. Our partnership has translated into tangible outcomes, and we've seen a positive impact on our business. Thank you for helping us achieve our goals!</p>
+                            <p class="overview"><b>Divya</b>, Associate Analyst</p>
+                        </div>
+                        <div class="item carousel-item">
+                            <div class="img-box"><img src="https://drive.google.com/uc?id=10_X-Ki-1d4hS9aMKksoSc-Uz5VNqJ5el" alt="xyz"></div>
+                            <p class="testimonial">The support is top-notch. Quick responses, effective solutions, and a genuine commitment to customer satisfaction. It's reassuring to know they have our back.</p>
+                            <p class="overview"><b>Animesh</b>, Education counsellor</p>
+                        </div>
+                    </div>
+                    <!-- Carousel Controls -->
+                    <a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--FAQs-->
+    <section id="faqsEx" class="faqs-container">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <h4>In how many days I will receive my golden numerology report?</h4>
+            <p>You'll get it on your WhatsApp within 48 hours of payment.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>The live consultation will be via voice call or live call?</h4>
+            <p>We have both options available whichever you like.</p>
+        </div>
+        <div class="faq-item">
+            <h4>How long the live consultation will last?</h4>
+            <p>Usually it lasts 25 mins but it can be extended if you have more doubts.</p>
+        </div>
+    </section>
+
+    <!--Footer-->
+    <footer id="footerEx">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <!-- Your logo or footer branding goes here -->
+                <img src="https://drive.google.com/uc?id=1deKZJlxul1TDQPUm_57IIvCa_IpozGkU" alt="Your Logo">
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="#carouselEx ">Home</a></li>
+                    <li><a href="#aboutEx ">About</a></li>
+                    <li><a href="tel:+918808804329">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <!-- Your social media icons or links go here -->
+                <a href="https://www.youtube.com/channel/UCkWGWO_2OC_WIGuowjCXN-A" target="_blank"><img src="https://cdn3.iconfinder.com/data/icons/social-network-30/512/social-06-512.png" alt="YouTube"></a>
+                <a href="https://instagram.com/astroanjalividya?igshid=YzAwZjE1ZTI0Zg%3D%3D&utm_source=qr" target="_blank"><img src="https://logos-world.net/wp-content/uploads/2020/04/Instagram-icon-Logo-2016-present.png" alt="Instagram"></a>
+            </div>
+        </div>
+        <p class="copyright">© 2023 Your Company. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+
+</html>
